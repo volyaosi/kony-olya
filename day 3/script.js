@@ -48,28 +48,30 @@ String.prototype.repeat = function (count) {
 // includes
 String.prototype.includes = function (searchString, position = 0) {
   let output = false;
-  let origin = "" + this;
+  let origin =  this;
 
-  if (!searchString) break;
-
-  for (let i = position; i < origin.length; i++) {
-    let subStrOrigin = "";
-    for (let j = i; j < searchString.length; j++) {
-      subStrOrigin += origin[j];
+    if (searchString) {
+        for (let i = position; i < origin.length; i++) {
+            let subStrOrigin = "";
+            for (let j = i; j < searchString.length; j++) {
+              subStrOrigin += origin[j];
+            }
+        
+            if (subStrOrigin === searchString) {
+              output = true;
+              break;
+            }
+          }
     }
 
-    if (subStrOrigin === searchString) {
-      output = true;
-      break;
-    }
-  }
+  
   return output;
 };
 
 //substr
 String.prototype.substr = function (start, length = this.length) {
-  let output = this.valueOf();
-  let origin = "" + this;
+  let output = this;
+  let origin = this;
 
   if (Number.isInteger(start) && !!origin) {
     output = "";
@@ -91,9 +93,10 @@ String.prototype.substr = function (start, length = this.length) {
 //substring
 String.prototype.substring = function (indexA, indexB = this.length) {
   let output = "" + this;
-  let origin = "" + this;
+  let origin = "" + this; 
+  console.log(origin.length);
 
-  if (Number.isInteger(indexA) && !!origin) {
+  if (Number.isInteger(indexA) && Number.isInteger(indexB) && !!origin) {
     if (indexA < origin.length) {
       output =
         indexB > indexA ? getStr(indexA, indexB) : getStr(indexB, indexA);
@@ -101,7 +104,7 @@ String.prototype.substring = function (indexA, indexB = this.length) {
   }
 
   function getStr(start, end) {
-    let str = "";
+    let str = ""; console.log(str);
     start = start < 0 ? 0 : start;
 
     for (let i = start; i < end && i < origin.length; i++) {
