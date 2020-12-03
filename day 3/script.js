@@ -26,7 +26,6 @@ String.prototype.lastIndexOf = function (
 
 //repeat
 String.prototype.repeat = function (count) {
-  let origin = "" + this;
   let output = "";
 
   if (count != count) {
@@ -39,7 +38,7 @@ String.prototype.repeat = function (count) {
     throw new Error("inappropriate input");
   } else {
     for (let i = 0; i < count; i++) {
-      output += origin;
+      output += this;
     }
   }
 
