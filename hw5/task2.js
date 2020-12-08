@@ -5,8 +5,11 @@
 
 function getChairs(otherRooms, requiredChairs) {
   if (requiredChairs === 0) return "Game On";
+  if (requiredChairs > 8) return "Incorrect input, you should request up to 8 chairs";
 
-  return otherRooms.reduce((output, el) => {
+  let checkNum = requiredChairs;
+
+  const chairs = otherRooms.reduce((output, el) => {
     if (requiredChairs > 0) {
       const spare = el[1] - el[0].length > 0 ? el[1] - el[0].length : 0;
 
@@ -18,4 +21,6 @@ function getChairs(otherRooms, requiredChairs) {
 
     return output;
   }, []);
+
+  return chairs.reduce((total, chair) => total += chair) < checkNum ? 'Not enought' : chairs;
 }
