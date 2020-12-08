@@ -1,11 +1,17 @@
 //Count IP Addresses
 
-function ipsBetween(ipStr0, ipStr1) {
-  const ipArr0 = ipStr0.split(".").reverse();
-  const ipArr1 = ipStr1.split(".").reverse();
+function ipsBetween(start, end) {
+  const regex = /^(([1-9]?\d|1\d\d|2[0-5][0-5]|2[0-4]\d)\.){3}([1-9]?\d|1\d\d|2[0-5][0-5]|2[0-4]\d)$/;
 
-  return ipArr0.reduce((count, el, i) => {
-    count += (ipArr1[i] - el) * Math.pow(256, i);
+  if (!regex.test(start) || !regex.test(end)) {
+    return "To get IPs range, provide a couple of valid IPv4 adresses";
+  }
+
+  const octetListStart = start.split(".").reverse();
+  const octetListEnd = end.split(".").reverse();
+
+  return Math.abs(octetListStart.reduce((count, el, i) => {
+    count += (octetListEnd[i] - el) * Math.pow(256, i);
     return count;
-  }, 0);
+  }, 0));
 }
