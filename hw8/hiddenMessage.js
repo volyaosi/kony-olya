@@ -1,23 +1,30 @@
 // Mission: Hidden Message
 function foundationMessage(str) {
-    const acceptSymb = /[A-Za-z\'\']+/g;
-    const separator = /[?!.]/;
-    const arr = str.split(separator).map( el => el.match(acceptSymb));
+  const arr = convertToArr(str);
+  let res = "";
 
-    let i = 0;
-    let res = '';
+  for (let i = 0; i < arr.length - 1; i += arr[i].length + 1) {
+    res += arr[i].reduce((acc, b, num, sent) => {
+      let sentNum = num + i + 1;
+      let wordNum = b.match(/\w/g).length - 1;
+      let word = arr[sentNum][wordNum].toLowerCase();
+      if (num === 0) word = capitilize(word);
 
-    while (i < arr.length - 1){
-        res += arr[i].reduce((acc, b, num, sent) => {
-            let word = arr[num + i + 1][b.match(/\w/g).length - 1].toLowerCase();
-            if (num === 0) word = word.charAt(0).toUpperCase() + word.slice(1);
+      let endSymbol = num === sent.length - 1 ? ". " : " ";
 
-            let symb = num === sent.length - 1 ? '. ' : ' ';
-            acc += word + symb;
-            return acc;
-          }, '' );
+      acc += word + endSymbol;
+      return acc;
+    }, "");
+  }
+  return res.trim();
+}
 
-        i += arr[i].length + 1;
-    }
-    return res.trim();   
+function convertToArr(str) {
+  const acceptSymb = /[A-Za-z\'\']+/g;
+  const separator = /[?!.]/;
+  return str.split(separator).map((el) => el.match(acceptSymb));
+}
+
+function capitilize(word) {
+  return word.charAt(0).toUpperCase() + word.slice(1)
 }
