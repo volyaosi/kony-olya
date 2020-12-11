@@ -7,8 +7,9 @@ function foundationMessage(str) {
     res += arr[i].reduce((acc, b, num, sent) => {
       let sentNum = num + i + 1;
       let wordNum = b.match(/\w/g).length - 1;
+
       let word = arr[sentNum][wordNum].toLowerCase();
-      if (num === 0) word = capitilize(word);
+      if (num === 0) word = word.charAt(0).toUpperCase() + word.slice(1); //capitilize first word
 
       let endSymbol = num === sent.length - 1 ? ". " : " ";
 
@@ -23,8 +24,4 @@ function convertToArr(str) {
   const acceptSymb = /[A-Za-z\'\']+/g;
   const separator = /[?!.]/;
   return str.split(separator).map((el) => el.match(acceptSymb));
-}
-
-function capitilize(word) {
-  return word.charAt(0).toUpperCase() + word.slice(1)
 }
