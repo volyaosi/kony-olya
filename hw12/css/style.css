@@ -42,7 +42,7 @@ body {
 .loader-list-btn {
     background-color: #fff;
     display: flex;
-    justify-content:space-between
+    justify-content:space-between;
     padding: 10px;
     height: 40px;
     width: 200px;
