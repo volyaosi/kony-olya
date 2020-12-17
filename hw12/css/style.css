@@ -17,7 +17,6 @@ body {
 
 .content-container {
     display: flex;
-    width: 80%;
     align-items: center;
     justify-content:space-around;
     margin: 0 auto;
@@ -80,4 +79,18 @@ body {
 }
 .selected {
     color: #4d8c9d;
+}
+
+@media (max-width: 750px) {
+
+    .loader-preview {
+        width: 200px;
+        height: 200px;
+        line-height: 200px;
+        font-size: 30px;
+        margin-bottom: 20px;
+    }
+    .content-container {
+        flex-direction: column-reverse;
+    }
 }
