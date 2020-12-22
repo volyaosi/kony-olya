@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Demo</title>
+</head>
+<body>
+<nav>
+    <ul class='tabs'>
+        <li id='task1' class='active'>Chessboard</li>
+        <li id='task2'>Envelopes</li>
+        <li id='task3'>Triangles</li>
+        <li id='task4'>Palindrom</li>
+        <li id='task5'>Tickets</li>
+        <li id='task6'>Sequence</li>
+        <li id='task7'>Fibonacci</li>
+    </ul>
+</nav>
+<main>
+    <div data-id='task1' class='task'>  
+        <h1 class='title'>Chessboard Generator</h1>
+        <div class="content">
+            <div class="input-container">
+                <div class="desc-container">
+                    <h2>Description:</h2>
+                    <p class="desc pad20">Fill in this form to get a chess styled text.</p>
+                </div>
+                <div>
+                    <input type="number" name="height" placeholder="Submit a board height" class='wide-field' step='1'>
+                    <input type="number" name="width" placeholder="Submit a board width" class='wide-field' step='1'>
+                    <div class='wide-field line-labeled-field'>
+                        <label for="symbolTask1">Your symbol (1 character):</label>
+                        <input type="text" id="symbolTask1" name="symbol">   
+                    </div>
+                    <button data-id='task1' class="submit">Get board</button>
+                </div>
+            </div> 
+            <div class="output-field">
+                <pre class="output"></pre>
+            </div>
+        </div>
+    </div>   
+
+    <!-- Task2 -->
+    <div data-id='task2' class='hide task'>  
+        <h1 class='title'>Envelope analyzer</h1>
+        <div class="content">
+            <div class="input-container">
+                <div class="desc-container">
+                    <h2>Description:</h2>
+                    <p class="desc pad20">Compare two envelopes using this form. Simply submit the length of envelopes' sides</p>
+                </div>
+                <div>
+                    <div class="pad10 inputObj"><h4>Envelope 1</h4>
+                        <input type="text" name="a" placeholder="First side" class="small-field">
+                        <span>X</span>
+                        <input type="text" name="b" placeholder="Second side" class="small-field">                
+                    </div>
+                    <div class='inputObj'>
+                        <h4>Envelope 2</h4>
+                        <input type="text" name="c" placeholder="First side" class="small-field">
+                        <span>X</span>
+                        <input type="text" name="d" placeholder="Second side"class="small-field">                
+                    </div>
+                    <button data-id='task2' class="submit">Compare</button>
+                </div>
+            </div>
+            <div class="output-field">
+                <div class="output"></div>
+            </div>
+        </div>
+    </div>
+   
+    <!-- Task 3 -->
+    <div data-id='task3' class='hide task'>  
+        <h1 class='title'>Triangles</h1>
+        <div class="content">
+            <div class="input-container">
+                <div class="desc-container">
+                    <h2>Description:</h2>
+                    <p class="desc pad20">Compare two Triangles</p>
+                </div>
+                <div>
+                    <div class="pad20 inputObj"><h4>Triangle data:</h4>
+                        <input type="text" name="vertices"  placeholder="Name your veltices" value="ABC" class='wide-field'>
+                        <input type="text" name="side1"  placeholder="side 1" class='xs-field'> X
+                        <input type="text" name="side2"  placeholder="side 2" class='xs-field'> X
+                        <input type="text" name="side3"  placeholder="side 3" class='xs-field'>                
+                    </div>
+                    <div class='pad20 inputObj'>
+                        <h4>Triangle data:</h4>
+                        <input type="text" name="vertices"  placeholder="Name your veltices" value="DEF" class='wide-field'>
+                        <input type="text" name="side1"  placeholder="side 1" class='xs-field'> X
+                        <input type="text" name="side2"  placeholder="side 2" class='xs-field'> X
+                        <input type="text" name="side3"  placeholder="side 3" class='xs-field'>                  
+                    </div>
+                    <button class="add">Add Triangle</button>
+
+                    <button data-id='task3' class="submit">Compare</button>
+                </div>
+            </div>
+            <div class="output-field">
+                <div class="output"></div>
+            </div>
+        </div>
+    </div>
+    <!-- Task 4 -->
+    <div data-id='task4' class='hide task'>  
+        <h1 class='title'>Palindrom</h1>
+        <div class="content">
+            <div class="input-container">
+                <div class="desc-container">
+                    <h2>Description:</h2>
+                    <p class="desc pad20">Check if a number is a palindrom.</p>
+                </div>
+                <div>
+                    <input type="text" name="num"  placeholder="Submit your number" class='wide-field'>
+                    <button data-id='task4' class="submit">Get palindrom</button>
+                </div>
+            </div>
+            <div class="output-field">
+                <div class="output"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Task 5 -->
+    <div data-id='task5' class='hide task'>  
+        <h1 class='title'>Lucky tickets</h1>
+        <div class="content">
+            <div class="input-container">
+                <div class="desc-container">
+                    <h2>Description:</h2>
+                    <p class="desc pad20">Find out how many lucky tickets are in your range.</p>
+                </div>
+                <div>
+                    <input class="wide-field" type="text" name="min" placeholder="First number of range">
+                    <input class="wide-field" type="text" name="max" placeholder="Last number of range">
+                    <button data-id='task5' class="submit">Count lucky tickets</button>
+                </div>
+            </div>
+            <div class="output-field">
+                <div class="output"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Task 6 -->
+    <div data-id='task6' class='hide task'>  
+        <h1 class='title'>Sequence</h1>
+        <div class="content">
+            <div class="input-container">
+                <div class="desc-container">
+                    <h2>Description:</h2>
+                    <p class="desc pad20">Get the range of numbers, which squares are not less than your provided number.</p>
+                </div>
+                <div>
+                    <input class="wide-field" type="number" name="length" placeholder="Sequence length">
+                    <input class="wide-field" type="text" name="min" placeholder="Min number²">
+                    <button data-id='task6' class="submit">Get sequence</button>
+                </div>
+            </div>
+            <div class="output-field">
+                <div class="output"></div>
+            </div>
+        </div>
+    </div>      
+
+    <!-- Task 7 -->
+    <div data-id='task7' class='hide task'>  
+        <h1 class='title'>Fibonacci Sequence</h1>
+        <div class="content">
+            <div class="input-container">
+                <div class="desc-container">
+                    <h2>Description:</h2>
+                    <p class="desc pad20">Get Fibonacci sequence within your range OR all Fibonacci numbers of specified length</p>
+                </div>
+                <div>
+                    <div class="pad10">
+                        <p class='line-labeled-field'>Specify the range for the sequence</p>
+                        <input class="small-field" type="text" name="min" placeholder="Start">
+                        <span> X </span>
+                        <input class="small-field" type="text" name="max" placeholder="End">
+                    </div>
+                    <div class='line-labeled-field'>OR</div>
+                    <div class="wide-field line-labeled-field">
+                        <label for="lengthTask7">Desired length of numbers:</label><input type="text" name="length" id="lengthTask7">
+                    </div>
+                    <button data-id='task7' class="submit">Submit</button>
+                </div>
+            </div>
+            <div class="output-field">
+                <div class="output"></div>
+            </div>
+        </div>
+    </div>
+
+
+        </div>
+
+    </div>
+
+</main>
+
+
+
+
+    <script src='js/main.js' type='module'></script>
+</body>
+</html>
