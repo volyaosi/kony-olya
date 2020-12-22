@@ -21,7 +21,7 @@ export function palindrome({num}){
         return res[0]
       }
       
-      return 0;
+      return `is not palindrom`;
 }
 
 function validate(num) {

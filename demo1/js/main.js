@@ -26,7 +26,6 @@
         button: [...document.querySelectorAll('.submit')],
         addBtn: document.querySelector('.add')
     }
-    console.log(dom.button);
     
 
     // Tabs
@@ -58,7 +57,7 @@
         let input = inputObj.length > 0 ?
                     inputObj.map(obj => gatherInput(obj)):
                     gatherInput(task);
-        console.log(input);
+
         let res = funcObj[id](input);
         output.textContent = res;
         

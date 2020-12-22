@@ -23,19 +23,27 @@ function calcArea (...sides) {
 
 function validate(objList) {
     const res = {valid: false, msg: ''};
-    objList.forEach(obj => {
+    for (let obj of objList) {
         if(obj.vertices.length !== 3) {
-            res.msg = "Please provide 3 length string to name all triangle vertices (e.g. ABC)"
+            res.msg = "Please provide 3 length string to name all triangle vertices (e.g. ABC)";
+            return res;
         } else if (obj.side1.trim() === '' || obj.side2.trim() === '' || obj.side3.trim() === ''){
-            res.msg = "Please fill in all fields"
+            res.msg = "Please fill in all fields";
+            return res;
+        } else if (obj.side1 <= 0 || obj.side2 <= 0 || obj.side3<= 0){
+            res.msg = "Please provide only positive numbers";
+            return res;
+        } else if ((obj.side1 >= obj.side2 + obj.side3) || (obj.side2 >= obj.side1 + obj.side3) || (obj.side3 >= obj.side1+ obj.side2)){
+            res.msg = `Such triangle does not exist: ${obj.vertices}`;
+            return res;
         } else {
             res.valid = true;
             return res;
         }
-
-    })
-
+    }
 }
+
+
 
 
 

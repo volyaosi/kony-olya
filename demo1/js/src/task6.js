@@ -13,11 +13,6 @@ export function getSequence ({length, min}) {
     return res.join(', ');
 }
 
-
-function isEqual(firstHalf, secondHalf){
-    return firstHalf.split('').reduce((a,b) => +a + +b) === secondHalf.split('').reduce((a,b) => +a + +b);
-}
-
 function validate(len, min) {
     const res = {valid: false, msg: ''};
 

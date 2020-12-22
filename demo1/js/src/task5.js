@@ -13,7 +13,7 @@ export function countLuckyTickets({min, max}) {
         if (isEqual(str.slice(0,3), str.slice(3))) obj.simple++;
         if (isEqual(str[0]+str[2]+str[4], str[1]+str[3]+str[5])) obj.complex++;  
     }
-    return  obj.simple, obj.complex;
+    return  `Simple method found ${obj.simple} lucky tickets, complex method found ${obj.complex} lucky tickets`;
 }
 
 function isEqual(firstHalf, secondHalf){
