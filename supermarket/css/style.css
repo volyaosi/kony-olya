@@ -46,3 +46,7 @@
     background-color: #e24515;
     border-radius: 15px;
   }
+
+  #orderList .modal-dialog {
+    max-width: 900px;
+  }
