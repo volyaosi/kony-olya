@@ -1,0 +1,48 @@
+.hide {
+    display: none; }
+  
+.field-container {
+    margin: 0 auto;
+    color: #444;
+    padding: 1rem;
+    width: 500px;
+    position: relative; 
+}
+
+.field {
+    padding: 10px;
+    width: 80%;
+    display: block;
+    border-radius: 10px;
+    height: 3rem;
+    background: #f3f3f0;
+    outline: none;
+}
+  
+  .error {
+    position: absolute;
+    top: -5px;
+    left: 10%;
+    height: 20px;
+    color: #e24515;
+    font-size: 12px;
+    z-index: 4; }
+  
+  .regular-border { border: 2px solid #444; }
+  .error-border { border: 2px solid #e24515; }
+  
+  .success-border { border: 2px solid #149476;}
+
+  .cart-btn {
+    position: relative;
+    margin-right: 20px;
+    padding: 7px 10px; 
+  }
+  .cart-badge {
+    font-size: 10px;
+    position: absolute;
+    top: 0;
+    left: 5px; 
+    background-color: #e24515;
+    border-radius: 15px;
+  }
