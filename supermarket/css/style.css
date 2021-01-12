@@ -50,3 +50,17 @@
   #orderList .modal-dialog {
     max-width: 900px;
   }
+
+  @media (max-width: 600px) {
+    .search-panel-wrapper {
+      display: flex;
+      flex-direction: column;
+    }
+    .search-panel-wrapper .col {
+      width: 300px;
+    }
+
+    navbar .orderList {
+      visibility: hidden;
+    }
+  }
